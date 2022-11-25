@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Gestari | Price List</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/adminlte.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav-bar></nav-bar>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <side-bar></side-bar>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Price List</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Price List</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="modal fade" id="modal-lg">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Add New Price List</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="../../index3.html" method="post">
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <label for="inputCategory">Type of Waste</label>
+                                            <input type="text" id="inputCategory" class="form-control">
+                                        </div>
+                                        <div class="col form-group">
+                                            <label>Category of Waste</label>
+                                            <select class="form-control select2" style="width: 100%;">
+                                                <option selected="selected">Kertas</option>
+                                                <option>Plastik</option>
+                                                <option>Beling</option>
+                                                <option>Logam</option>
+                                                <option>Lain-lain</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <label for="inputPrice">Price</label>
+                                            <input type="number" id="inputPrice" class="form-control">
+                                        </div>
+                                        <div class="col form-group">
+                                            <label>Unit</label>
+                                            <select class="form-control select2" style="width: 100%;">
+                                                <option selected="selected">Kilogram</option>
+                                                <option>Pieces</option>
+                                                <option>Litter</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal add -->
+                <div class="modal fade" id="modal-edit">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Edit Price List</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="../../index3.html" method="post">
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <label for="inputCategory">Type of Waste</label>
+                                            <input type="text" id="inputCategory" class="form-control">
+                                        </div>
+                                        <div class="col form-group">
+                                            <label>Category of Waste</label>
+                                            <select class="form-control select2" style="width: 100%;">
+                                                <option selected="selected">Kertas</option>
+                                                <option>Plastik</option>
+                                                <option>Beling</option>
+                                                <option>Logam</option>
+                                                <option>Lain-lain</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <label for="inputPrice">Price</label>
+                                            <input type="number" id="inputPrice" class="form-control">
+                                        </div>
+                                        <div class="col form-group">
+                                            <label>Unit</label>
+                                            <select class="form-control select2" style="width: 100%;">
+                                                <option selected="selected">Kilogram</option>
+                                                <option>Pieces</option>
+                                                <option>Litter</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal edit -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <button type="button" class="btn btn-success" data-toggle="modal"
+                                        data-target="#modal-lg">
+                                        <i class="fas fa-plus"></i> Add New Price List
+                                    </button>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th style="width: 1%">No.</th>
+                                                <th>Type of Waste</th>
+                                                <th>Category of Waste</th>
+                                                <th>Price</th>
+                                                <th>Last Modified</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td>Duplek</td>
+                                                <td>Kertas</td>
+                                                <td>Rp. 1000</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <button type="button" class="btn btn-info btn-sm"
+                                                        data-toggle="modal" data-target="#modal-edit">
+                                                        <i class="fas fa-pencil-alt"></i> Edit
+                                                    </button>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td>Arsip A</td>
+                                                <td>Kertas</td>
+                                                <td>Rp. 2300</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">3</td>
+                                                <td>Kardus</td>
+                                                <td>Kertas</td>
+                                                <td>Rp. 1800</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">4</td>
+                                                <td>Koran</td>
+                                                <td>Kertas</td>
+                                                <td>Rp. 2300</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">5</td>
+                                                <td>Kabel</td>
+                                                <td>Lain-lain</td>
+                                                <td>Rp. 2000</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">6</td>
+                                                <td>CD</td>
+                                                <td>Lain-lain</td>
+                                                <td>Rp. 550</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">7</td>
+                                                <td>Sandal/Sepatu/Gembos</td>
+                                                <td>Lain-lain</td>
+                                                <td>Rp. 400</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">8</td>
+                                                <td>Pralon</td>
+                                                <td>Lain-lain</td>
+                                                <td>Rp. 1100</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">9</td>
+                                                <td>Bodong Campur</td>
+                                                <td>Plastik</td>
+                                                <td>Rp. 1700</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">10</td>
+                                                <td>Bodong Kotor</td>
+                                                <td>Plastik</td>
+                                                <td>Rp. 2200</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">11</td>
+                                                <td>Bodong Bersih</td>
+                                                <td>Plastik</td>
+                                                <td>Rp. 2900</td>
+                                                <td class="font-italic text-center">12 Nov 2022</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-info btn-sm"
+                                                        href="/pages/tables/price-list-edit.html">
+                                                        <i class="fas fa-pencil-alt"> </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"> </i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="text-center">
+                                                <th style="width: 1%">No.</th>
+                                                <th>Type of Waste</th>
+                                                <th>Category of Waste</th>
+                                                <th>Price</th>
+                                                <th>Last Modified</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 3.2.0
+            </div>
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+            reserved.
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- Custom Element -->
+    <script src="script/component/sidebar.js"></script>
+    <script src="script/component//navbar.js"></script>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTablPlugins -->
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="plugins/jszip/jszip.min.js"></script>
+    <script src="plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+</body>
+
+</html>
