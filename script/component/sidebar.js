@@ -47,7 +47,7 @@ class SideBar extends HTMLElement {
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="deposit.html" class="nav-link">
+                            <a href="index.html" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -56,13 +56,27 @@ class SideBar extends HTMLElement {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="deposit.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fa-solid fa-money-bill-transfer"></i>
                                 <p>
                                     Deposit
-                                    <span class="badge badge-info right">2</span>
+                                    <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="deposit.html" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-hand-holding-dollar"></i>
+                                        <p>Deposit Request</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="deposit-history.html" class="nav-link">
+                                        <i class="nav-icon fa-solid fa-file-invoice"></i>
+                                        <p>Deposit History</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="customers.html" class="nav-link">
