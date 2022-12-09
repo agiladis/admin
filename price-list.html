@@ -67,13 +67,13 @@
                                             <input type="text" id="inputName" class="form-control">
                                         </div>
                                         <div class="col form-group">
-                                            <label>Type of Waste</label>
-                                            <select class="form-control select2" style="width: 100%;">
+                                            <label for="inputType">Type of Waste</label>
+                                            <select id="inputType" class="form-control select2" style="width: 100%;">
                                                 <option selected="selected" value="KERTAS">KERTAS</option>
                                                 <option value="PLASTIK">PLASTIK</option>
-                                                <option value="BELING">BELING</option>
-                                                <option value="LOGAM">LOGAMM</option>
-                                                <option value="LAIN-LAIN">LAIN-LAIN</option>
+                                                <option value="KACA ">KACA </option>
+                                                <option value="LOGAM">LOGAM</option>
+                                                <option value="KHUSUS">KHUSUS</option>
                                             </select>
                                         </div>
                                     </div>
@@ -84,11 +84,21 @@
                                         </div>
                                         <div class="col form-group">
                                             <label>Unit</label>
-                                            <select class="form-control select2" style="width: 100%;">
+                                            <select id="inputUnit" class="form-control select2" style="width: 100%;">
                                                 <option selected="selected" value="kg">Kilogram</option>
                                                 <option value="pcs">Pieces</option>
-                                                <option value="L">Litter</option>
+                                                <option value="liter">Litter</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <label for="inputCatalogueCode">Catalogue Code</label>
+                                            <input type="text" id="inputCatalogueCode" class="form-control">
+                                        </div>
+                                        <div class="col form-group">
+                                            <label for="inputImagePath">Image path</label>
+                                            <input type="text" id="inputImagePath" class="form-control">
                                         </div>
                                     </div>
                                 </form>
@@ -103,66 +113,7 @@
                     <!-- /.modal-dialog -->
                 </div>
                 <!-- /.modal add -->
-                <div class="modal fade" id="modal-edit">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Edit Price List</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="../../index3.html" method="post">
-                                    <div class="row">
-                                        <div class="col form-group">
-                                            <label for="inputId">Id</label>
-                                            <input type="number" id="inputId" class="form-control">
-                                        </div>
-                                        <div class="col form-group">
-                                            <label for="inputCategory">Name of Waste</label>
-                                            <input type="text" id="inputCategory" class="form-control">
-                                        </div>
-                                        <div class="col form-group">
-                                            <label>Type of Waste</label>
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected" value="KERTAS">KERTAS</option>
-                                                <option value="PLASTIK">PLASTIK</option>
-                                                <option value="BELING">BELING</option>
-                                                <option value="LOGAM">LOGAMM</option>
-                                                <option value="LAIN-LAIN">LAIN-LAIN</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col form-group">
-                                            <label for="inputPrice">Price</label>
-                                            <input type="number" id="inputPrice" class="form-control">
-                                        </div>
-                                        <div class="col form-group">
-                                            <label>Unit</label>
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected" value="kg">Kilogram</option>
-                                                <option value="pcs">Pieces</option>
-                                                <option value="L">Litter</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <img src="https://hammerhead-app-zfi4g.ondigitalocean.app/images/K1.png"
-                                            class="w-25" alt="">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button id="buttonUpdate" type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
+
                 <!-- /.modal edit -->
                 <div class="container-fluid">
                     <div class="row">
@@ -187,7 +138,7 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="listBook">
+                                        <tbody id="listCatalogue">
 
                                         </tbody>
                                         <tfoot>
