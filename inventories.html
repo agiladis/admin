@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/adminlte.min.css" />
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini" onload="getInventory()">
   <!-- Site wrapper -->
   <div class="wrapper">
     <!-- Navbar -->
@@ -72,82 +72,17 @@
                 <tr class="text-center">
                   <th style="width: 1%">No.</th>
                   <th style="width: 10%">Code</th>
-                  <th style="width: 30%">Inventory Name</th>
-                  <th style="width: 4%">Qty</th>
+                  <th style="width: 20%">Inventory Name</th>
+                  <th style="width: 15%">Brand</th>
+                  <th style="width: 1%">Qty</th>
                   <th style="width: 5%">Unit</th>
+                  <th style="width: 8%">Price</th>
                   <th style="width: 10%" class="text-center">Status</th>
                   <th style="width: 30%">Action</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td class="text-center">1</td>
-                  <td class="text-center">
-                    B3AF4
-                  </td>
-                  <td>
-                    Timbangan Sampah
-                    <br>
-                    <small class="font-italic">Created on 2 Aug 2022</small>
-                  </td>
-                  <td class="project_progress text-center">
-                    1
-                  </td>
-                  <td class="project-state text-center">
-                    pcs.
-                  </td>
-                  <td class="text-center">
-                    <span class="badge badge-success">Baik</span>
-                  </td>
-                  <td class="project-actions text-center">
-                    <a class="btn btn-primary btn-sm" href="#">
-                      <i class="fas fa-folder"> </i>
-                      View
-                    </a>
-                    <a class="btn btn-info btn-sm" href="/inventory-edit.html">
-                      <i class="fas fa-pencil-alt"> </i>
-                      Edit
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                      <i class="fas fa-trash"> </i>
-                      Delete
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="text-center">2</td>
-                  <td class="text-center">
-                    B4AF4
-                  </td>
-                  <td>
-                    Karung
-                    <br>
-                    <small class="font-italic">Created on 2 Aug 2022</small>
-                  </td>
-                  <td class="project_progress text-center">
-                    1
-                  </td>
-                  <td class="project-state text-center">
-                    pcs.
-                  </td>
-                  <td class="text-center">
-                    <span class="badge badge-success">Baik</span>
-                  </td>
-                  <td class="project-actions text-center">
-                    <a class="btn btn-primary btn-sm" href="#">
-                      <i class="fas fa-folder"> </i>
-                      View
-                    </a>
-                    <a class="btn btn-info btn-sm" href="#">
-                      <i class="fas fa-pencil-alt"> </i>
-                      Edit
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                      <i class="fas fa-trash"> </i>
-                      Delete
-                    </a>
-                  </td>
-                </tr>
+              <tbody id="listInventory">
+
               </tbody>
             </table>
           </div>
@@ -174,6 +109,8 @@
   </div>
   <!-- ./wrapper -->
 
+  <!-- API Request -->
+  <script src="script/requestInventory.js"></script>
   <!-- Custom Element -->
   <script src="script/component/sidebar.js"></script>
   <script src="script/component//navbar.js"></script>

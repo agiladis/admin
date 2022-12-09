@@ -47,86 +47,95 @@
 
       <!-- Main content -->
       <section class="content">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">General</h3>
+        <form action="inventories.html" method="POST">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">General</h3>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
                 </div>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="inputCode">Inventory Code</label>
+                    <input type="text" id="inputCode" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName">Inventory Name</label>
+                    <input type="text" id="inputName" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputStatus">Status</label>
+                    <select id="inputStatus" class="form-control custom-select">
+                      <option selected disabled>Select one</option>
+                      <option value="Baik">Good</option>
+                      <option value="Rusak">Under Maintanance</option>
+                      <option value="Dalam Perbaikan">Broken</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- /.card-body -->
               </div>
-              <div class="card-body">
-                <div class="form-group">
-                  <label for="inputCode">Inventory Code</label>
-                  <input type="text" id="inputCode" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="inputName">Inventory Name</label>
-                  <input type="text" id="inputName" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="inputDescription">Inventory Description</label>
-                  <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="inputStatus">Status</label>
-                  <select id="inputStatus" class="form-control custom-select">
-                    <option selected disabled>Select one</option>
-                    <option>Good</option>
-                    <option>Under Maintanance</option>
-                    <option selected>Broken</option>
-                  </select>
-                </div>
-              </div>
-              <!-- /.card-body -->
+              <!-- /.card -->
             </div>
-            <!-- /.card -->
-          </div>
-          <div class="col-md-6">
-            <div class="card card-secondary">
-              <div class="card-header">
-                <h3 class="card-title">Budget</h3>
+            <div class="col-md-6">
+              <div class="card card-secondary">
+                <div class="card-header">
+                  <h3 class="card-title">Detail Product</h3>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col form-group">
-                    <label for="inputQuantity">Quantity</label>
-                    <input type="number" id="inputQuantity" class="form-control">
-                  </div>
-                  <div class="col form-group">
-                    <label for="inputUnit">Unit</label>
-                    <input type="text" id="inputUnit" class="form-control">
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="inputPricePerUnit">Price per unit <small class="font-italic">(in rupiah)</small></label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">Rp.</span>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col form-group">
+                      <label for="inputBrand">Inventory Brand</label>
+                      <input type="text" id="inputBrand" class="form-control">
                     </div>
-                    <input type="number" id="inputPricePerUnit" class="form-control">
+                    <div class="col form-group">
+                      <label for="inputYearOfProduction">Year of production</label>
+                      <input type="number" id="inputYearOfProduction" class="form-control">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col form-group">
+                      <label for="inputQuantity">Quantity</label>
+                      <input type="number" id="inputQuantity" class="form-control">
+                    </div>
+                    <div class="col form-group">
+                      <label for="inputUnit">Unit</label>
+                      <input type="text" id="inputUnit" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPrice">Price per unit <small class="font-italic">(in rupiah)</small></label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Rp.</span>
+                      </div>
+                      <input type="number" id="inputPrice" class="form-control">
+                    </div>
                   </div>
                 </div>
+                <!-- /.card-body -->
               </div>
-              <!-- /.card-body -->
+              <!-- /.card -->
             </div>
-            <!-- /.card -->
           </div>
-        </div>
-        <div class="d-flex flex-row">
-          <a href="#" class="btn btn-secondary mr-2">Cancel</a>
-          <input type="submit" value="Add Inventory" class="btn btn-success float-right">
-        </div>
+          <div class="d-flex flex-row">
+            <a href="inventories.html" class="btn btn-secondary mr-2">Cancel</a>
+            <button id="buttonSave" type="button" class="btn btn-success float-right">Add Inventory</button>
+            <!-- <input id="buttonSave" type="submit" class="btn btn-success float-right" value="Submit"> -->
+          </div>
+        </form>
       </section>
       <!-- /.content -->
     </div>
@@ -147,6 +156,8 @@
   </div>
   <!-- ./wrapper -->
 
+  <!-- API Request -->
+  <script src="script/requestInventory.js"></script>
   <!-- Custom Element -->
   <script src="script/component/sidebar.js"></script>
   <script src="script/component//navbar.js"></script>
